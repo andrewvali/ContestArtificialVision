@@ -28,6 +28,7 @@ To split the entire dataset into train, validation and test set, run the followi
 * [test_set.py](https://github.com/andrewvali/ContestArtificialVision/blob/main/preprocessing/test_set.py): This script split the remaining part into a test set.
 * [create_test_tar.py](https://github.com/andrewvali/ContestArtificialVision/blob/main/preprocessing/create_test_tar.py): Create the correct csv of test set.
 
+Dataset distribution before and after splitting, is available [here](https://github.com/andrewvali/ContestArtificialVision/blob/main/csv_processing_analysis/Dataset_distribution.PNG)
 # Train
 In order to train neural networks, you must run ```train.py``` script from the training directory.
 Here the used commands to train the associated paper solutions.
