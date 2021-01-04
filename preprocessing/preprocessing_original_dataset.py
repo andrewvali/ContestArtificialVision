@@ -16,13 +16,14 @@ from recover_identities import recover_identities
 from plot_utils import vs_plot
 from extract_images import extract_jpgs
 
+path_csv = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\train.age_detected.csv"
 ages = {}  # {identity:{jpg:age}}
 grouped_ages = {} #{identity:{group_age:[jpgs]}}
 final_dict = {} #{identity:jpgs}
 splitted_dict_samples, splitted_dict_labels = {},{}
 
 print("Getting ages...")
-ages = read_csv(ages)
+ages = read_csv(ages,path_csv)
 print("Getting ages... DONE")
 
 print("Grouping ages...")

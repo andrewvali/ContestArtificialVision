@@ -23,12 +23,12 @@ def recover_identities(grouped_ages,final_dict,partition):
     Takes 150 image if partition is train, 15 if partition is validation
     :return:
     """
-    if partition in "train":
-        THRESHOLD = 30
-        DELTA = 30
-    if partition in "validation":
-        THRESHOLD = 3
-        DELTA = 3
+    if partition == "train":
+        THRESHOLD = 7
+        DELTA = 7
+    if partition == "validation":
+        THRESHOLD = 1
+        DELTA = 1
 
     for id in grouped_ages.keys():
         remaining_jpgs = []

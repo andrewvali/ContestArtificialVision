@@ -20,9 +20,9 @@ def group_ages(ages, grouped_ages, final_dict,partition):
     :return: grouped_ages and final_dict
     """
     if partition in "train":
-        MAX_JPGS = 150
+        MAX_JPGS = 30
     if partition in "validation":
-        MAX_JPGS = 15
+        MAX_JPGS = 7
 
     for id in ages.keys():
         vals = list(ages[id].values())

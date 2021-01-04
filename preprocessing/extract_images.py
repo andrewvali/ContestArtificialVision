@@ -11,9 +11,9 @@ import os
 from shutil import copy2
 
 # Path containg all data
-PATH_TO_EXTRACT_DATASET = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\train\\"
+PATH_TO_EXTRACT_DATASET = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\Dataset\\train\\"
 # New path of training data
-PATH_TO_TRAINING_DIR = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\Dataset_processed\\"
+PATH_TO_TRAINING_DIR = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\Dataset\\val\\"
 
 
 def extract_jpgs(splitted_dict_samples): #{id:{"train":[jpgs]}}

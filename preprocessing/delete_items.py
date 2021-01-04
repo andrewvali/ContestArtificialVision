@@ -11,9 +11,9 @@
 import os
 
 # path folder containg all data of dataset_processed
-PATH_TO_DELETE = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\Dataset_processed\\"
+PATH_TO_DELETE = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\Dataset\\train\\"
 # path of validation folder
-PATH_SOURCE = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\Dataset_validation\\"
+PATH_SOURCE = "C:\\Users\\Andrew\\Desktop\\Contest_Artificial_Vision\\Dataset\\val\\"
 
 def delete_jpgs(path_to_delete,path_source):
     """
@@ -25,7 +25,7 @@ def delete_jpgs(path_to_delete,path_source):
     cnt = 0
 
     for id in os.listdir(path_source):
-        for jpg in os.listdir(path_source+"/"+id):
+        for jpg in os.listdir(path_source+id):
             cnt += 1
             try:
                 os.remove(path_to_delete+id+"\\"+jpg)
