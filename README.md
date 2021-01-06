@@ -41,7 +41,7 @@ python3 train_AgeEstimation.py --net renset50 --dataset vggface2_gender --pretra
 # Evaluation
 In order to evaluate the networks, move into the training directory and run the following command. In the subdirectory results, as the name suggests, you will find the results of these scripts in a csv file, where the first argument is the image and second command is age predicted by model.
 ```bash
-python3 train_AgeEstimation.py --net renset50 --dataset vggface2_gender --pretraining vggface2 --preprocessing vggface2 --augmentation vggface2 --mode test
+python3 test.py --inputCSV path_test_csv --testFolder path_test_folder
 ```
 # Project Structure
 ```
@@ -81,6 +81,4 @@ AgeEstimationFramework
 The code in this repository also includes open keras implementation of net Resnet50:
 * VGGFace: [https://github.com/rcmalli/keras-vggface](https://github.com/rcmalli/keras-vggface)
 # Note
-
-For all the reasons on the network architecture and all the training parameters, you can consult the following doc:
-* [AgeEstimationDoc]()
+Is it possible to view the model and the weights to the following [link](https://drive.google.com/drive/folders/17zIM0ftF_U4TgQ_wKIWz8pNfySlhps1r?usp=sharing)

@@ -84,7 +84,7 @@ INPUT_SHAPE = None
 
 def get_model():
     global INPUT_SHAPE
-    if args.net.startswith('senet') or args.net.startswith('resnet') or args.net.startswith('vgg') or args.net.startswith('resnet50'):
+    if args.net.startswith('senet') or args.net.startswith('resnet') or args.net.startswith('vgg'):
         INPUT_SHAPE = (224, 224, 3)
         if args.pretraining.startswith('imagenet'):
             if args.net.startswith('senet') or args.net.startswith('resnet'):
@@ -139,6 +139,11 @@ model.summary()
 def mae(y_true, y_pred): #array di N array di probabilità, N=batchsize
   y_true = tf.map_fn(lambda element: tf.math.argmax(element), y_true, dtype=tf.dtypes.int64)
   y_pred = tf.map_fn(lambda element: tf.math.argmax(element), y_pred, dtype=tf.dtypes.int64)
+  #tf.print(tf.shape(y_true)) # [128 101]
+
+  #ages_true = tf.map_fn(lambda true: K.argmax(true), y_true, dtype=tf.int64)
+  #ages_pred = tf.map_fn(lambda pred: K.argmax(pred), y_pred, dtype=tf.int64)
+
   return mean_absolute_error(tf.dtypes.cast(y_true, dtype=tf.dtypes.float64),
                             tf.dtypes.cast(y_pred, dtype=tf.dtypes.float64))
 
@@ -224,18 +229,19 @@ if args.mode.startswith('train'):
 
     lr_sched = step_decay_schedule(initial_lr=initial_learning_rate,decay_factor=learning_rate_decay_factor, step_size=learning_rate_decay_epochs)
     monitor = 'val_mae' if NUM_CLASSES > 1 else 'val_mean_squared_error'
-    early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss', mode='min', patience=5,
+    early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss', mode='min', patience=10,
                            min_delta=0.002, verbose=True)
+    reduce_on_pletau = keras.callbacks.ReduceLROnPlateau(monitor='val_loss',factor=0.2,patience=5,min_lr=0.001)
     checkpoint = keras.callbacks.ModelCheckpoint(filepath, verbose=1, save_best_only=True, monitor=monitor)
     tbCallBack = keras.callbacks.TensorBoard(log_dir=logdir, write_graph=True, write_images=True)
-    callbacks_list = [lr_sched, checkpoint, tbCallBack, early_stopping]
+    callbacks_list = [checkpoint, tbCallBack,reduce_on_pletau]
 
     if args.mode == "train_inference":
         batch_size = 1
 
     if args.resume:
         
-        path_chk = '/content/drive/MyDrive/Contest Artificial Vision/GenderRecognitionFramework/trained/_netvgg16_datasetvggface2_gender_pretrainingvggface2_preprocessingvggface2_augmentationvggface2_resumeTrue_lr0.005_batch128_training-epochs40_20210104_091408'
+        path_chk = '/content/drive/MyDrive/Contest Artificial Vision/GenderRecognitionFramework/trained/_netvgg16_datasetvggface2_gender_pretrainingvggface2_preprocessingvggface2_augmentationvggface2_lr0.0005_resumeTrue_batch128_training-epochs40_20210106_121314'
         a,b = _find_latest_checkpoint(path_chk)
         initial_epoch = a
 
