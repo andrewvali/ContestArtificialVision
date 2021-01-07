@@ -1,6 +1,6 @@
 # ContestArtificialVision
 This is the official repository of Artificial Vision exam.
-## Team members
+## Group 27:
 * Gargiulo Michele
 * Marchesano Riccardo
 * Sabini Pietro
