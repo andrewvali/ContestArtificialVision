@@ -75,6 +75,7 @@ AgeEstimationFramework
 │   ├── check_params.py
 │   ├── autoaugment
 │   └── ferplus_aug_dataset.py
+├── Resnet50.ipynb
 ├── README.md
 ```
 # Aknoweledgements

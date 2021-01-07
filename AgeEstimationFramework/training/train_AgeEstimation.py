@@ -234,7 +234,7 @@ if args.mode.startswith('train'):
     reduce_on_pletau = keras.callbacks.ReduceLROnPlateau(monitor='val_loss',factor=0.2,patience=5,min_lr=0.001)
     checkpoint = keras.callbacks.ModelCheckpoint(filepath, verbose=1, save_best_only=True, monitor=monitor)
     tbCallBack = keras.callbacks.TensorBoard(log_dir=logdir, write_graph=True, write_images=True)
-    callbacks_list = [checkpoint, tbCallBack,reduce_on_pletau]
+    callbacks_list = [checkpoint, tbCallBack,reduce_on_pletau, early_stopping]
 
     if args.mode == "train_inference":
         batch_size = 1
