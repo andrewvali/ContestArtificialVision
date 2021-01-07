@@ -1,5 +1,10 @@
 # ContestArtificialVision
 This is the official repository of Artificial Vision exam.
+## Team members
+* Gargiulo Michele
+* Marchesano Riccardo
+* Sabini Pietro
+* Valitutto Andrea
 
 # Requirements
 * Python 3.8
@@ -36,8 +41,8 @@ Here the used commands to train the associated paper solutions.
 python3 train_AgeEstimation.py --net renset50 --dataset vggface2_gender --pretraining vggface2 --preprocessing vggface2 --augmentation vggface2 --batch 128 --lr 0.005 --training-epochs 50
 ```
 
-* If you use colab it launches the cells of this [colab]() step by step, adjusting the correct paths of the folders
-* The implementation of Resnet50 is available [here]() in the ```vggface_custom_build``` function.
+* If you use colab it launches the cells of this [colab](https://github.com/andrewvali/ContestArtificialVision/blob/main/Resnet50.ipynb) step by step, adjusting the correct paths of the folders
+* The implementation of Resnet50 is available [here](https://github.com/andrewvali/ContestArtificialVision/blob/main/AgeEstimationFramework/training/model_build.py) in the ```vggface_custom_build``` function.
 # Evaluation
 In order to evaluate the networks, move into the training directory and run the following command. In the subdirectory results, as the name suggests, you will find the results of these scripts in a csv file, where the first argument is the image and second command is age predicted by model.
 ```bash
