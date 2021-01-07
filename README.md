@@ -35,7 +35,7 @@ To split the entire dataset into train, validation and test set, run the followi
 
 Dataset distribution before and after splitting, is available [here](https://github.com/andrewvali/ContestArtificialVision/blob/main/csv_processing_analysis/Dataset_distribution.PNG)
 # Train
-In order to train neural networks, you must run ```train.py``` script from the training directory.
+In order to train neural networks, you must run ```train.py``` script from the training directory, available [here](https://github.com/andrewvali/ContestArtificialVision/blob/main/AgeEstimationFramework/training/train_AgeEstimation.py).
 Here the used commands to train the associated paper solutions.
 ```bash
 python3 train_AgeEstimation.py --net renset50 --dataset vggface2_gender --pretraining vggface2 --preprocessing vggface2 --augmentation vggface2 --batch 128 --lr 0.005 --training-epochs 50
@@ -48,6 +48,7 @@ In order to evaluate the networks, move into the training directory and run the 
 ```bash
 python3 test.py --inputCSV path_test_csv --testFolder path_test_folder
 ```
+* To see test.py, click [here](https://github.com/andrewvali/ContestArtificialVision/blob/main/AgeEstimationFramework/training/test.py)
 * If you use colab it launches the cells of this [colab](https://github.com/andrewvali/ContestArtificialVision/blob/main/Resnet50.ipynb) step by step in the Test Network section, adjusting the correct paths of the folders
 
 # Project Structure
