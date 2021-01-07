@@ -50,7 +50,7 @@ python3 test.py --inputCSV path_test_csv --testFolder path_test_folder
 ```
 * To see test.py, click [here](https://github.com/andrewvali/ContestArtificialVision/blob/main/AgeEstimationFramework/training/test.py)
 * If you use colab it launches the cells of this [colab](https://github.com/andrewvali/ContestArtificialVision/blob/main/Resnet50.ipynb) step by step in the Test Network section, adjusting the correct paths of the folders
-
+* To see the csv result, click [here](https://github.com/andrewvali/ContestArtificialVision/blob/main/Result/GROUP_27.csv)
 # Project Structure
 ```
 AgeEstimationFramework
