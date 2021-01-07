@@ -229,7 +229,7 @@ if args.mode.startswith('train'):
 
     lr_sched = step_decay_schedule(initial_lr=initial_learning_rate,decay_factor=learning_rate_decay_factor, step_size=learning_rate_decay_epochs)
     monitor = 'val_mae' if NUM_CLASSES > 1 else 'val_mean_squared_error'
-    early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss', mode='min', patience=10,
+    early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss', mode='min', patience=15,
                            min_delta=0.002, verbose=True)
     reduce_on_pletau = keras.callbacks.ReduceLROnPlateau(monitor='val_loss',factor=0.2,patience=5,min_lr=0.001)
     checkpoint = keras.callbacks.ModelCheckpoint(filepath, verbose=1, save_best_only=True, monitor=monitor)
