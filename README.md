@@ -91,4 +91,4 @@ The code in this repository also includes open keras implementation of net Resne
 * VGGFace: [https://github.com/rcmalli/keras-vggface](https://github.com/rcmalli/keras-vggface)
 # Note
 Is it possible to view the model and the weights to the following [link](https://drive.google.com/drive/folders/17zIM0ftF_U4TgQ_wKIWz8pNfySlhps1r?usp=sharing)
-For more details see the doc [here](https://github.com/andrewvali/ContestArtificialVision/tree/main/doc)
+<br>For more details see the doc [here](https://github.com/andrewvali/ContestArtificialVision/tree/main/doc)
