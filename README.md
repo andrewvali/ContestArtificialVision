@@ -13,7 +13,7 @@ This is the official repository of Artificial Vision exam.
 * opencv-python == 4.2.0.34
 * matplotlib == 3.2.1
 * Keras == 2.3.1
-* tensorflow-gpu == 1.14.0
+* tensorflow-gpu >= 2.4.0
 * tqdm == 4.46.1 
   
 ## If you run the code on colab these requiriments are satisfied, but you will install the following packages:
